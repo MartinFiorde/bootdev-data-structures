@@ -48,36 +48,24 @@ class TestQueue(unittest.TestCase):
             return "\n".join([f"- {item}" for item in reversed(queue.items)])
 
         def test(operations, expected_outputs):
-            print("---------------------------------")
             queue = Queue()
             outputs = []
             for op, value in operations:
                 if op == "push":
                     queue.push(value)
-                    print(f"Push: {value}")
                 elif op == "pop":
                     result = queue.pop()
                     outputs.append(result)
-                    print(f"Pop: {result}")
                 elif op == "peek":
                     result = queue.peek()
                     outputs.append(result)
-                    print(f"Peek: {result}")
                 elif op == "size":
                     result = queue.size()
                     outputs.append(result)
-                    print(f"Size: {result}")
 
-                print("\nQueue state:")
-                print(visualize_queue(queue))
-                print()
 
-            print(f"Expected: {expected_outputs}")
-            print(f"Actual: {outputs}")
             if outputs == expected_outputs:
-                print("Pass")
                 return True
-            print("Fail")
             return False
 
         def main():
@@ -89,10 +77,6 @@ class TestQueue(unittest.TestCase):
                     passed += 1
                 else:
                     failed += 1
-            if failed == 0:
-                print("============= PASS ==============")
-            else:
-                print("============= FAIL ==============")
             print(f"3-2 task: {passed} passed, {failed} failed")
             self.assertEqual(failed, 0)
 
