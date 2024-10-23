@@ -142,6 +142,14 @@ class TestStack(unittest.TestCase):
                     None,
                 ],
             ),
+            (
+                [
+                    ("peek", None),
+                ],
+                [
+                    None,
+                ],
+            ),
         ]
 
         def test(operations, expected_outputs):
