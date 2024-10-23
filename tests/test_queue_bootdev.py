@@ -1,6 +1,6 @@
 import unittest
 
-from src.queue import Queue
+from src.queue_imperfect import QueueImperfect
 
 
 class TestQueue(unittest.TestCase):
@@ -48,7 +48,7 @@ class TestQueue(unittest.TestCase):
             return "\n".join([f"- {item}" for item in reversed(queue.items)])
 
         def test(operations, expected_outputs):
-            queue = Queue()
+            queue = QueueImperfect()
             outputs = []
             for op, value in operations:
                 if op == "push":
