@@ -13,4 +13,7 @@ def is_balanced(input_str):
     if opener.size() != 0:
         return False
     return True
-        
+
+
+class DebounceStack(Stack):
+    pass
