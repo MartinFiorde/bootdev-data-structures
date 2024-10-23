@@ -55,22 +55,16 @@ class TestStack(unittest.TestCase):
         ]
 
         def test(operations, expected_output):
-            print("---------------------------------")
             stack = Stack()
             result = None
             for op, value in operations:
                 if op == "push":
-                    print(f"Push: {value}")
                     stack.push(value)
                 elif op == "size":
                     result = stack.size()
 
-            print(f"Expecting size: {expected_output}")
-            print(f"Actual size: {result}")
             if result == expected_output:
-                print("Pass")
                 return True
-            print("Fail")
             return False
 
         def main():
@@ -82,11 +76,7 @@ class TestStack(unittest.TestCase):
                     passed += 1
                 else:
                     failed += 1
-            if failed == 0:
-                print("============= PASS ==============")
-            else:
-                print("============= FAIL ==============")
-            print(f"{passed} passed, {failed} failed")
+            print(f"2-1 task: {passed} passed, {failed} failed")
             self.assertEqual(failed, 0)
 
         test_cases = submit_cases

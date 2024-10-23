@@ -3,7 +3,7 @@ class Stack:
         self.items = []
 
     def push(self, item):
-        pass
+        self.items.append(item)
 
     def size(self):
-        pass
+        return len(self.items)
