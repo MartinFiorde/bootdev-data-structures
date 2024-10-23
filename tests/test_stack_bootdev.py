@@ -259,9 +259,6 @@ class TestStack(unittest.TestCase):
         ]
 
         def test(actions, expected_stack):
-            print("---------------------------------")
-            print(f"Actions: {actions}")
-            print(f"Expected stack: {expected_stack}")
 
             stack = DebounceStack()
             for action in actions:
@@ -271,11 +268,8 @@ class TestStack(unittest.TestCase):
             while stack.size() != 0:
                 result.insert(0, stack.pop())
 
-            print(f"Actual stack: {result}")
             if result == expected_stack:
-                print("Pass")
                 return True
-            print("Fail")
             return False
 
         def main():
@@ -287,16 +281,10 @@ class TestStack(unittest.TestCase):
                     passed += 1
                 else:
                     failed += 1
-            if failed == 0:
-                print("============= PASS ==============")
-            else:
-                print("============= FAIL ==============")
             print(f"2-C1 task: {passed} passed, {failed} failed")
             self.assertEqual(failed, 0)
 
         test_cases = submit_cases
-        if "__RUN__" in globals():
-            test_cases = run_cases
 
         main()
 

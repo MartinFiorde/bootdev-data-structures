@@ -16,4 +16,7 @@ def is_balanced(input_str):
 
 
 class DebounceStack(Stack):
-    pass
+    def push(self, item):
+        if self.peek() == item:
+            return
+        super().push(item)
