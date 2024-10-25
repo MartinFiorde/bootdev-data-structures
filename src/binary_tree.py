@@ -14,6 +14,9 @@ class BSTNode:
             return self
 
         if self.val == val:
+            return self.delete_when_found()
+        
+    def delete_when_found(self):
             if self.right == None:
                 return self.left
             if self.left == None:

@@ -43,10 +43,6 @@ class TestQueue(unittest.TestCase):
             ),
         ]
 
-        def visualize_queue(queue):
-            if not queue.items:
-                return "Queue is empty"
-            return "\n".join([f"- {item}" for item in reversed(queue.items)])
 
         def test(operations, expected_outputs):
             queue = QueueImperfect()
@@ -107,9 +103,7 @@ class TestQueue(unittest.TestCase):
         ]
 
 
-        def test(queue, user, expected_state):
-            name = user[0]
-            action = user[1]
+        def test(queue: QueueImperfect, user, expected_state):
             try:
                 result = matchmake(queue, user)
             except Exception as e:
