@@ -3,12 +3,12 @@ import unittest
 
 import random
 from src.binary_tree import BSTNode
-from src.binary_tree_user import User, get_users
+from src.tree_user import User, get_users
 
 
 class TestBinaryTree(unittest.TestCase):
 
-    def test_queue_5_8(self):
+    def test_bstree_5_8(self):
 
         run_cases = [
             (6, 2, [User(0), User(9), User(16), User(17)]),
